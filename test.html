@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test dynamic html page</title>
+    <script src="https://unpkg.com/hyperapp"></script>
+    <script src="https://unpkg.com/babel-standalone"></script>
+  </head>
+  <body>
+    <script type="text/babel">
+
+    const { h, app, Router } = hyperapp
+    /** @jsx h */
+
+    const Menu = ({model, actions}) =>
+      <nav>{model.pages.map(page =>
+        <button onclick={ e => actions.router.go(page.url) }>
+          {page.text}
+        </button>
+      )}</nav>
+
+    app({
+      model: {
+        pages: [
+          { text: 'Home',
+            url: '/'
+          },{
+            text: 'About',
+            url: '/about'
+          }
+        ],
+      },
+      view: {
+        '/': (model, actions) =>
+          <div>
+            <Menu model={model} actions={actions} />
+            <h1>Home page Content</h1>
+          </div>,
+        '/about': (model, actions) =>
+          <div>
+            <Menu model={model} actions={actions} />
+            <h1>About page content!!!</h1>
+          </div>,
+      },
+      plugins: [Router]
+    })
+
+    </script>
+  </body>
+</html>
