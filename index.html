@@ -23,7 +23,7 @@
       model: {
         pages: [
           { text: 'Home',
-            url: '/'
+            url: '/test'
           },{
             text: 'About',
             url: '/about'
@@ -31,7 +31,7 @@
         ],
       },
       view: {
-        '/': (model, actions) =>
+        '/test': (model, actions) =>
           <div>
             <Menu model={model} actions={actions} />
             <h1>Home page Content</h1>
