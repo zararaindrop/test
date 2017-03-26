@@ -25,8 +25,8 @@
           { text: 'Home',
             url: '/test'
           },{
-            text: 'About',
-            url: '/about'
+            text: 'hypnotherapist',
+            url: '/test/hypnotherapist'
           }
         ],
       },
@@ -36,10 +36,10 @@
             <Menu model={model} actions={actions} />
             <h1>Home page Content</h1>
           </div>,
-        '/about': (model, actions) =>
+        '/test/hypnotherapist': (model, actions) =>
           <div>
             <Menu model={model} actions={actions} />
-            <h1>About page content!!!</h1>
+            <h1>hypnotherapist page content!!!</h1>
           </div>,
       },
       plugins: [Router]
