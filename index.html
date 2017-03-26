@@ -21,14 +21,25 @@
 
     app({
       model: {
-        pages: [
-          { text: 'Home',
-            url: '/test'
-          },{
-            text: 'About',
-            url: '/about'
-          }
-        ],
+        pages: [{
+          text: 'Home',
+          url: '/test'
+        },{
+          text: 'The Hypnotherapist',
+          url: '/hypnotherapist'
+        },{
+          text: 'How does hypnosis work?',
+          url: '/work'
+        },{
+          text: 'What happens when I visit a hypnotist?',
+          url: '/visit'
+        },{
+          text: 'FAQ',
+          url: '/faq'
+        },{
+          text: 'Contact',
+          url: '/contact'
+        }],
       },
       view: {
         '/test': (model, actions) =>
