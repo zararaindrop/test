@@ -21,56 +21,25 @@
 
     app({
       model: {
-        pages: [{
-          text: 'Home',
-          url: '/test'
-        },{
-          text: 'The Hypnotherapist',
-          url: '/test/hypnotherapist'
-        },{
-          text: 'How does hypnosis work?',
-          url: '/test/work'
-        },{
-          text: 'What happens when I visit a hypnotist?',
-          url: '/test/visit'
-        },{
-          text: 'FAQ',
-          url: '/test/faq'
-        },{
-          text: 'Contact',
-          url: '/test/contact'
-        }],
+        pages: [
+          { text: 'Home',
+            url: '/'
+          },{
+            text: 'About',
+            url: '/about'
+          }
+        ],
       },
       view: {
-        '/test': (model, actions) =>
+        '/': (model, actions) =>
           <div>
             <Menu model={model} actions={actions} />
             <h1>Home page Content</h1>
           </div>,
-        '/test/hypnotherapist': (model, actions) =>
+        '/about': (model, actions) =>
           <div>
             <Menu model={model} actions={actions} />
-            <h1>hypnotherapist page content!!!</h1>
-          </div>,
-        '/test/work': (model, actions) =>
-          <div>
-            <Menu model={model} actions={actions} />
-            <h1>work page content!!!</h1>
-          </div>,
-        '/test/visit': (model, actions) =>
-          <div>
-            <Menu model={model} actions={actions} />
-            <h1>visit page content!!!</h1>
-          </div>,
-        '/test/faq': (model, actions) =>
-          <div>
-            <Menu model={model} actions={actions} />
-            <h1>faq page content!!!</h1>
-          </div>,
-        '/test/contact': (model, actions) =>
-          <div>
-            <Menu model={model} actions={actions} />
-            <h1>contact page content!!!</h1>
+            <h1>About page content!!!</h1>
           </div>,
       },
       plugins: [Router]
